@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+				<h1>5 days <%= data.city.name %> weather forecast</h1>
+
+				<p><%= data.list[0].main.temp %></p>
+
+				<% data.list.forEach(function(day){ %>
+					<li> <%= day.weather[0].main %> </li>
+				<% }) %>
+
+				<a class="btn btn-primary" href="/">Back to the search</a>
+		</div>
+	</div>
+
+</div>
+
+
+
+<% include partials/footer %>
+
+<ul>
+	<li></li>
+</ul>

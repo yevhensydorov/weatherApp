@@ -1,0 +1,31 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "5 day weather forecast",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yevhensydorov/weatherApp.git"
+  },
+  "keywords": [
+    "weather",
+    "express",
+    "node",
+    "api",
+    "js"
+  ],
+  "author": "Eugene Sydorov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yevhensydorov/weatherApp/issues"
+  },
+  "homepage": "https://github.com/yevhensydorov/weatherApp#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  }
+}
