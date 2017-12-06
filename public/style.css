@@ -1,0 +1,13 @@
+.weather-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0;
+}
+
+.weather-content .item-days {
+	list-style-type: none;
+	background-color: grey;
+	padding: 5px;
+}

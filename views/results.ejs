@@ -3,24 +3,38 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center">
-				<h1>5 days <%= data.city.name %> weather forecast</h1>
-
-				<p><%= data.list[0].main.temp %></p>
-
+			<h1>5 days <%= data.city.name %> weather forecast</h1>
+			
+			<ul class="weather-content">
 				<% data.list.forEach(function(day){ %>
-					<li> <%= day.weather[0].main %> </li>
+						<% var date = new Date(day.dt_txt) %>
+						<% if(date.getHours() === 12) { %>
+							<li class="item-days">
+								<p class="date">
+									<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
+								</p>
+								<p class="day-temperature">
+									<span>Temperature: </span>
+									<%= day.main.temp %>
+									<span> °C</span>
+								</p>
+								<p>
+									<%= day.weather[0].main + ", " + day.weather[0].description %>
+								</p>
+							</li>
+						<% } %>
 				<% }) %>
-
-				<a class="btn btn-primary" href="/">Back to the search</a>
+			</ul>
 		</div>
 	</div>
-
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<a class="btn btn-primary" href="/">Back to the search</a>
+		</div>
+	</div>
 </div>
 
 
 
 <% include partials/footer %>
 
-<ul>
-	<li></li>
-</ul>

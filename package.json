@@ -26,6 +26,7 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "node-fetch": "^1.7.3",
     "request": "^2.83.0"
   }
 }
