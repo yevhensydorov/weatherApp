@@ -5,7 +5,7 @@
 		<div class="col-md-12 text-center">
 			<h1>5 days <%= data.city.name %> weather forecast</h1>
 			
-			<ul class="weather-content">
+			<ul class="weather-content day">
 				<% data.list.forEach(function(day){ %>
 					<% var weatherId = day.weather[0].id %>
 					<% var date = new Date(day.dt_txt) %>
@@ -15,8 +15,8 @@
 								<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
 							</p>
 							<p class="day-temperature">
-								<span>Temperature: </span>
-								<%= day.main.temp %>
+								<i class="fa fa-sun-o" aria-hidden="true"></i>
+								<%= day.main.temp.toFixed() %>
 								<span> °C</span>
 							</p>
 							<p>
@@ -51,6 +51,53 @@
 					<% } %>
 				<% }) %>
 			</ul>
+			<ul class="weather-content night">
+				<% data.list.forEach(function(day){ %>
+					<% var weatherId = day.weather[0].id %>
+					<% var date = new Date(day.dt_txt) %>
+					<% if(date.getHours() === 0) { %>
+						<li class="item-days">
+							<p class="date">
+								<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
+							</p>
+							<p class="day-temperature">
+								<i class="fa fa-moon-o" aria-hidden="true"></i>
+								<%= day.main.temp.toFixed() %>
+								<span> °C</span>
+							</p>
+							<p>
+								<%= day.weather[0].main + ", " + day.weather[0].description %>
+							</p>
+							<p class="icon">
+								<% if(weatherId >= 200 && weatherId <= 232) { %>
+									<img src='http://openweathermap.org/img/w/11n.png' />
+								<% } else if(weatherId >= 300 && weatherId <= 321) { %>
+									<img src='http://openweathermap.org/img/w/09n.png' />
+								<% } else if(weatherId >= 500 && weatherId <= 504) { %>
+									<img src='http://openweathermap.org/img/w/10n.png' />
+								<% } else if(weatherId === 511) { %>
+									<img src='http://openweathermap.org/img/w/13n.png' />
+								<% } else if(weatherId >= 520 && weatherId <= 531) { %>
+									<img src='http://openweathermap.org/img/w/09n.png' />
+								<% } else if(weatherId >= 600 && weatherId <= 622) { %>
+									<img src='http://openweathermap.org/img/w/13n.png' />
+								<% } else if(weatherId >= 701 && weatherId <= 781) { %>
+									<img src='http://openweathermap.org/img/w/50n.png' />
+								<% } else if(weatherId === 800) { %>
+									<img src='http://openweathermap.org/img/w/01n.png' />
+								<% } else if(weatherId === 801) { %>
+									<img src='http://openweathermap.org/img/w/02n.png' />
+								<% } else if(weatherId === 802) { %>
+									<img src='http://openweathermap.org/img/w/03n.png' />
+								<% } else if(weatherId === 803 || weatherId <= 804) { %>
+									<img src='http://openweathermap.org/img/w/04n.png' />
+								<% } %>
+							</p>
+						</li>
+					<% } %>
+				<% }) %>
+			</ul>			
+
 		</div>
 	</div>
 	<div class="row">
