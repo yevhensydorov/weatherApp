@@ -4,12 +4,13 @@
 	<div class="row">
 		<div class="col-md-12 text-center">
 			<h1>5 days <%= data.city.name %> weather forecast</h1>
-			
-			<ul class="weather-content day">
+
+			<h3 class="text-left">Day Forecast</h3>
+			<ul class="weather-content">
 				<% data.list.forEach(function(day){ %>
 					<% var weatherId = day.weather[0].id %>
 					<% var date = new Date(day.dt_txt) %>
-					<% if(date.getHours() === 12) { %>
+					<% if(date.getHours() === 15) { %>
 						<li class="item-days">
 							<p class="date">
 								<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
@@ -51,11 +52,13 @@
 					<% } %>
 				<% }) %>
 			</ul>
-			<ul class="weather-content night">
+
+			<h3 class="text-left">Night Forecast</h3>
+			<ul class="weather-content">
 				<% data.list.forEach(function(day){ %>
 					<% var weatherId = day.weather[0].id %>
 					<% var date = new Date(day.dt_txt) %>
-					<% if(date.getHours() === 0) { %>
+					<% if(date.getHours() === 3) { %>
 						<li class="item-days">
 							<p class="date">
 								<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
