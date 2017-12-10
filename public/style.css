@@ -1,3 +1,78 @@
+body {
+	background: #4b6cb7;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #fff;
+	font-size: 16px;
+}
+
+.navbar {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0;
+}
+
+.navbar a {
+	color: #fff;
+}
+
+.geo-but {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.geo-but i {
+	font-size: 3rem;
+}
+
+.thermometer {
+	font-size: 6rem;
+}
+
+.promo {
+	margin-top: 150px;
+}
+
+.search-form {
+	width: 30%;
+	margin: 25px auto;
+}
+
+.button-group {
+	margin-top: 40px;
+}
+
+.myButton {
+	background-color: transparent;
+	-moz-border-radius: 28px;
+	-webkit-border-radius: 28px;
+	border-radius: 28px;
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	color: #ffffff;
+	padding: 6px 20px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #000000;
+}
+.myButton:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: transparent;
+}
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
 .weather-content {
 	display: flex;
 	flex-direction: row;
@@ -8,7 +83,8 @@
 
 .weather-content .item-days {
 	list-style-type: none;
-	background-color: grey;
+	background-color: #B0BEC5;
 	padding: 5px;
 	width: 19%;
+	border-radius: 10px;
 }

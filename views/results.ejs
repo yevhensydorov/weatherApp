@@ -16,7 +16,6 @@
 								<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
 							</p>
 							<p class="day-temperature">
-								<i class="fa fa-sun-o" aria-hidden="true"></i>
 								<%= day.main.temp.toFixed() %>
 								<span> °C</span>
 							</p>
@@ -63,8 +62,15 @@
 							<p class="date">
 								<%= date.toUTCString().split(' ').slice(0, 4).join(' ') %>
 							</p>
+							<p >
+								<% if(date.getDay() === 0) { %>
+									<p class="weekday">
+
+									</p>
+								<% } %>
+								<%= date.getDay() %>
+							</p>
 							<p class="day-temperature">
-								<i class="fa fa-moon-o" aria-hidden="true"></i>
 								<%= day.main.temp.toFixed() %>
 								<span> °C</span>
 							</p>
@@ -104,8 +110,8 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12 text-center">
-			<a class="btn btn-primary" href="/">Back to the search</a>
+		<div class="button-group col-md-12 text-center">
+			<a class="myButton" href="/">Back to the search</a>
 		</div>
 	</div>
 </div>

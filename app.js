@@ -7,13 +7,15 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 
-app.get("", function(req, res){
+app.get("/", function(req, res){
 	res.render("search");
 });
 
 app.get("/results", function(req, res){
 	var searchedCity = req.query.search;
-	var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchedCity + "&APPID=4fb207611d39b10d6e71572389d683a4&units=metric";
+	if(searchedCity === ""){ res.render("error") } else {
+		var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchedCity + "&APPID=4fb207611d39b10d6e71572389d683a4&units=metric";
+	}
 	
 	// FETCH DATA WITH REQUEST PACKAGE
 	// request(url, function(error, response, body){
